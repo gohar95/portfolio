@@ -5,26 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gohar Zafar | Professional Mobile Application Developer</title>
     <meta name="description" content="Professional Flutter developer specializing in cross-platform mobile applications. View my portfolio of live apps including e-commerce, auction platforms, and productivity tools.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         /* CSS Variables */
         :root {
-            --primary-color: #2563eb;
-            --secondary-color: #1e40af;
-            --accent-color: #3b82f6;
-            --text-primary: #1f2937;
-            --text-secondary: #6b7280;
-            --text-light: #9ca3af;
-            --bg-primary: #ffffff;
-            --bg-secondary: #f8fafc;
-            --bg-tertiary: #f1f5f9;
-            --border-color: #e5e7eb;
+            --primary-color: #38bdf8; /* sky-400 */
+            --secondary-color: #0ea5e9; /* sky-500 */
+            --accent-color: #60a5fa; /* blue-400 */
+            --text-primary: #f8fafc; /* slate-50 */
+            --text-secondary: #94a3b8; /* slate-400 */
+            --text-dark: #1e293b; /* slate-800 */
+            --bg-primary: #0f172a; /* slate-900 */
+            --bg-secondary: #1e293b; /* slate-800 */
+            --bg-tertiary: #334155; /* slate-700 */
+            --border-color: #334155; /* slate-700 */
             --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
             --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
             --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
             --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --glow: 0 0 20px rgba(56, 189, 248, 0.15);
+            --gradient-primary: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
         }
 
         * {
@@ -38,9 +41,9 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: var(--text-primary);
+            color: var(--text-secondary);
             background: var(--bg-primary);
         }
 
@@ -55,7 +58,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(15, 23, 42, 0.75);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-color);
             z-index: 1000;
@@ -80,6 +83,7 @@
             font-weight: 700;
             color: var(--primary-color);
             text-decoration: none;
+            text-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
         }
 
         .nav-menu {
@@ -134,23 +138,19 @@
 
         /* Hero Section */
         .hero {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 120px 0 80px;
+            background-color: var(--bg-primary);
+            background-image: radial-gradient(circle at 25px 25px, rgba(56, 189, 248, 0.2) 2%, transparent 0%), 
+                              radial-gradient(circle at 75px 75px, rgba(56, 189, 248, 0.2) 2%, transparent 0%);
+            background-size: 100px 100px;
+            color: var(--text-primary);
+            padding: 140px 0 100px;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
 
         .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-            opacity: 0.3;
+            content: none;
         }
 
         .hero-content {
@@ -159,16 +159,22 @@
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
             font-weight: 700;
             margin-bottom: 1rem;
-            animation: fadeInUp 0.8s ease;
+            background: linear-gradient(45deg, var(--primary-color), #fff, var(--primary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            background-size: 200% 100%;
+            animation: fadeInUp 0.8s ease, backgroundPan 3s linear infinite;
         }
 
         .hero-subtitle {
             font-size: 1.25rem;
             margin-bottom: 2rem;
-            opacity: 0.9;
+            color: var(--text-secondary);
             animation: fadeInUp 0.8s ease 0.2s both;
         }
 
@@ -176,7 +182,7 @@
             font-size: 1.1rem;
             max-width: 600px;
             margin: 0 auto 2rem;
-            opacity: 0.8;
+            color: var(--text-secondary);
             animation: fadeInUp 0.8s ease 0.4s both;
         }
 
@@ -197,12 +203,12 @@
             font-size: 2.5rem;
             font-weight: 700;
             display: block;
-            color: #fbbf24;
+            color: var(--primary-color);
         }
 
         .stat-label {
             font-size: 0.9rem;
-            opacity: 0.8;
+            color: var(--text-secondary);
         }
 
         .cta-buttons {
@@ -223,27 +229,29 @@
             font-weight: 600;
             transition: all 0.3s ease;
             border: 2px solid transparent;
+            cursor: pointer;
         }
 
         .btn-primary {
-            background: white;
-            color: var(--primary-color);
+            background: var(--primary-color);
+            color: var(--text-dark);
         }
 
         .btn-primary:hover {
-            background: var(--bg-secondary);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
         }
 
         .btn-secondary {
-            color: white;
-            border-color: rgba(255, 255, 255, 0.3);
+            color: var(--text-primary);
+            border-color: var(--border-color);
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: white;
+            background: var(--bg-tertiary);
+            border-color: var(--primary-color);
+            color: var(--primary-color);
         }
 
         /* About Section */
@@ -273,25 +281,58 @@
 
         .about-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 2fr;
             gap: 4rem;
             align-items: center;
+            margin-bottom: 4rem;
+        }
+        
+        .about-image-container {
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .profile-picture {
+            width: 100%;
+            border-radius: 50%;
+            border: 5px solid var(--border-color);
+            box-shadow: 0 0 30px rgba(56, 189, 248, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-picture:hover {
+            transform: scale(1.05);
+        }
+
+        .about-text h3 {
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
         }
 
         .about-text {
             font-size: 1.1rem;
             line-height: 1.8;
             color: var(--text-secondary);
+            margin-bottom: 1.5rem;
         }
 
-        .about-text p {
-            margin-bottom: 1.5rem;
+        .skills-section {
+            margin-top: 4rem;
+        }
+
+        .skills-title {
+            text-align: center;
+            font-size: 1.75rem;
+            color: var(--text-primary);
+            margin-bottom: 2rem;
         }
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
         }
 
         .skill-item {
@@ -299,15 +340,16 @@
             align-items: center;
             gap: 0.75rem;
             padding: 1rem;
-            background: white;
+            background: var(--bg-primary);
             border-radius: 0.5rem;
-            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
             transition: all 0.3s ease;
         }
 
         .skill-item:hover {
-            box-shadow: var(--shadow-md);
-            transform: translateY(-2px);
+            border-color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: var(--glow);
         }
 
         .skill-icon {
@@ -318,13 +360,115 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: var(--text-primary);
             font-size: 1.2rem;
         }
 
         .skill-name {
             font-weight: 600;
             color: var(--text-primary);
+        }
+
+        /* Experience Section */
+        .experience {
+            padding: 5rem 0;
+            background: var(--bg-secondary);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 2rem auto 0;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border-color);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: 1rem 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            padding-right: 4rem;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            padding-left: 4rem;
+        }
+
+        .timeline-dot {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 16px;
+            height: 16px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            border: 3px solid var(--bg-secondary);
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-dot {
+            right: -8px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -8px;
+        }
+
+        .timeline-content {
+            background: var(--bg-primary);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-content:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: var(--glow);
+        }
+
+        .timeline-date {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-company {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .timeline-description {
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
 
         /* Portfolio Section */
@@ -340,17 +484,17 @@
         }
 
         .portfolio-card {
-            background: white;
+            background: var(--bg-secondary);
             border-radius: 1rem;
             overflow: hidden;
-            box-shadow: var(--shadow-md);
             transition: all 0.3s ease;
             border: 1px solid var(--border-color);
         }
 
         .portfolio-card:hover {
             transform: translateY(-5px);
-            box-shadow: var(--shadow-xl);
+            box-shadow: var(--glow);
+            border-color: var(--primary-color);
         }
 
         .card-header {
@@ -373,7 +517,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: var(--text-primary);
             font-size: 1.5rem;
         }
 
@@ -412,7 +556,7 @@
 
         .feature-tag {
             background: var(--accent-color);
-            color: white;
+            color: var(--bg-primary);
             padding: 0.25rem 0.75rem;
             border-radius: 1rem;
             font-size: 0.75rem;
@@ -430,8 +574,8 @@
             align-items: center;
             gap: 0.5rem;
             padding: 0.5rem 1rem;
-            background: var(--text-primary);
-            color: white;
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
             text-decoration: none;
             border-radius: 0.5rem;
             font-weight: 500;
@@ -441,6 +585,7 @@
 
         .store-btn:hover {
             background: var(--primary-color);
+            color: var(--text-dark);
             transform: translateY(-1px);
         }
 
@@ -451,7 +596,7 @@
         /* Contact Section */
         .contact {
             padding: 5rem 0;
-            background: var(--bg-secondary);
+            background: var(--bg-primary);
         }
 
         .contact-content {
@@ -484,17 +629,18 @@
             align-items: center;
             gap: 1rem;
             padding: 1rem;
-            background: white;
+            background: var(--bg-secondary);
             border-radius: 0.5rem;
-            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
             text-decoration: none;
             color: var(--text-primary);
             transition: all 0.3s ease;
         }
 
         .contact-method:hover {
-            box-shadow: var(--shadow-md);
+            border-color: var(--primary-color);
             transform: translateX(5px);
+            box-shadow: var(--glow);
         }
 
         .contact-method i {
@@ -505,15 +651,15 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: var(--text-primary);
             font-size: 0.9rem;
         }
 
         .contact-form {
-            background: white;
+            background: var(--bg-secondary);
             padding: 2rem;
             border-radius: 1rem;
-            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
         }
 
         .form-group {
@@ -535,12 +681,15 @@
             border-radius: 0.5rem;
             font-size: 1rem;
             transition: border-color 0.3s ease;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
             border-color: var(--primary-color);
+            box-shadow: var(--glow);
         }
 
         .form-group textarea {
@@ -550,8 +699,8 @@
 
         /* Footer */
         .footer {
-            background: var(--text-primary);
-            color: white;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
             padding: 3rem 0 2rem;
             text-align: center;
         }
@@ -573,9 +722,9 @@
             justify-content: center;
             width: 3rem;
             height: 3rem;
-            background: rgba(255, 255, 255, 0.1);
+            background: var(--bg-tertiary);
             border-radius: 50%;
-            color: white;
+            color: var(--text-primary);
             text-decoration: none;
             transition: all 0.3s ease;
         }
@@ -586,21 +735,26 @@
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid var(--border-color);
             padding-top: 2rem;
-            color: rgba(255, 255, 255, 0.7);
+            color: var(--text-secondary);
         }
 
         /* Animations */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(30px) scale(0.98);
             }
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateY(0) scale(1);
             }
+        }
+
+        @keyframes backgroundPan {
+            from { background-position: 0% center; }
+            to { background-position: -200% center; }
         }
 
         .fade-in-up {
@@ -615,7 +769,7 @@
                 left: -100%;
                 width: 100%;
                 height: calc(100vh - 70px);
-                background: white;
+                background: var(--bg-primary);
                 flex-direction: column;
                 justify-content: flex-start;
                 align-items: center;
@@ -645,7 +799,7 @@
             }
 
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 3rem;
             }
 
             .hero-stats {
@@ -657,12 +811,33 @@
                 gap: 2rem;
             }
 
+            .about-image-container {
+                margin-bottom: 2rem;
+            }
+
             .skills-grid {
                 grid-template-columns: 1fr;
             }
 
             .portfolio-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 8px;
+                transform: translateX(0);
+            }
+
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                padding-left: 3rem;
+                padding-right: 1rem;
+                text-align: left !important;
+            }
+
+            .timeline-dot {
+                left: 0 !important;
             }
 
             .contact-content {
@@ -729,6 +904,13 @@
             .hero {
                 background: none;
                 color: black;
+                background-color: white; /* For printing */
+            }
+            
+            .hero h1 {
+                background: none;
+                -webkit-text-fill-color: initial;
+                animation: none;
             }
             
             .portfolio-card {
@@ -746,6 +928,7 @@
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="#home" class="nav-link active">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
                 <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
@@ -806,23 +989,30 @@
             <div class="section-header">
                 <h2 class="section-title">About Me</h2>
                 <p class="section-subtitle">
-                    Dedicated Flutter developer with a passion for creating exceptional mobile experiences
+                    A snapshot of my skills, passion, and professional journey
                 </p>
             </div>
             
             <div class="about-content">
+                <div class="about-image-container">
+                    <img src="profile.png" alt="Gohar Zafar" class="profile-picture">
+                </div>
                 <div class="about-text">
+                    <h3>Hello, I'm Gohar Zafar.</h3>
                     <p>
-                        I'm a skilled Flutter developer with extensive experience in building cross-platform mobile applications. My expertise spans across various industries including e-commerce, fintech, logistics, and productivity applications.
+                        I'm a dedicated and results-driven Flutter developer with a deep passion for building cross-platform mobile applications that are both beautiful and highly functional. My journey in software development is fueled by a desire to solve complex problems and create intuitive, user-centric experiences.
                     </p>
                     <p>
-                        With a focus on clean code, modern architecture patterns, and user-centered design, I deliver applications that not only look great but also perform exceptionally well. I stay current with the latest Flutter updates and mobile development best practices.
+                        With a focus on clean, scalable code and modern architecture patterns like BLoC and Riverpod, I deliver applications that not only meet technical requirements but also provide a seamless and enjoyable experience for the end-user. I'm a lifelong learner, always eager to explore the latest advancements in the Flutter ecosystem and mobile development best practices.
                     </p>
                     <p>
-                        My approach combines technical excellence with strong project management skills, ensuring timely delivery and client satisfaction on every project.
+                        My collaborative spirit and strong communication skills enable me to work effectively in team environments, ensuring projects are delivered on time and to the highest standard of quality.
                     </p>
                 </div>
-                
+            </div>
+
+            <div class="skills-section">
+                <h3 class="skills-title">Core Competencies</h3>
                 <div class="skills-grid">
                     <div class="skill-item">
                         <div class="skill-icon">
@@ -840,19 +1030,19 @@
                         <div class="skill-icon">
                             <i class="fas fa-mobile-alt"></i>
                         </div>
-                        <span class="skill-name">Cross-Platform Development</span>
+                        <span class="skill-name">State Management (BLoC/Riverpod)</span>
                     </div>
                     <div class="skill-item">
                         <div class="skill-icon">
                             <i class="fas fa-fire"></i>
                         </div>
-                        <span class="skill-name">Firebase Integration</span>
+                        <span class="skill-name">Firebase & Firestore</span>
                     </div>
                     <div class="skill-item">
                         <div class="skill-icon">
-                            <i class="fas fa-shopping-cart"></i>
+                            <i class="fas fa-network-wired"></i>
                         </div>
-                        <span class="skill-name">E-Commerce Solutions</span>
+                        <span class="skill-name">REST APIs & GraphQL</span>
                     </div>
                     <div class="skill-item">
                         <div class="skill-icon">
@@ -864,13 +1054,63 @@
                         <div class="skill-icon">
                             <i class="fas fa-palette"></i>
                         </div>
-                        <span class="skill-name">UI/UX Design</span>
+                        <span class="skill-name">UI/UX Implementation</span>
                     </div>
                     <div class="skill-item">
                         <div class="skill-icon">
-                            <i class="fas fa-cloud"></i>
+                            <i class="fas fa-cogs"></i>
                         </div>
-                        <span class="skill-name">Cloud Integration</span>
+                        <span class="skill-name">CI/CD & DevOps</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Work Experience</h2>
+                <p class="section-subtitle">
+                    My professional journey as a mobile application developer
+                </p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2022 - Present</span>
+                        <h3 class="timeline-title">Senior Flutter Developer</h3>
+                        <p class="timeline-company">Tech Solutions Inc.</p>
+                        <p class="timeline-description">
+                            Leading the development of complex, cross-platform mobile applications for enterprise clients. Architecting scalable solutions, mentoring junior developers, and implementing advanced features like real-time data synchronization and complex animations.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2020 - 2022</span>
+                        <h3 class="timeline-title">Mobile App Developer</h3>
+                        <p class="timeline-company">Digital Innovations Co.</p>
+                        <p class="timeline-description">
+                            Developed and maintained several e-commerce and logistics applications using Flutter. Collaborated with UI/UX designers to translate wireframes into high-quality code and integrated with various third-party APIs for payments and analytics.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2018 - 2020</span>
+                        <h3 class="timeline-title">Junior Developer</h3>
+                        <p class="timeline-company">Startup Hub Ventures</p>
+                        <p class="timeline-description">
+                            Gained foundational experience in mobile development, working on various small-scale projects. Assisted in bug fixing, feature implementation, and contributed to the full software development lifecycle.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -1313,37 +1553,12 @@
         // Add subtle parallax effect to hero section
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero');
-            if (hero && scrolled < hero.offsetHeight) {
-                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            const heroContent = document.querySelector('.hero-content');
+            if (heroContent && scrolled < window.innerHeight) {
+                heroContent.style.transform = `translateY(${scrolled * 0.1}px)`;
+                heroContent.style.opacity = 1 - (scrolled / (window.innerHeight / 2));
             }
         });
-
-        // Initialize AOS (Animate On Scroll) alternative
-        function initScrollAnimations() {
-            const elements = document.querySelectorAll('.portfolio-card, .skill-item');
-            
-            elements.forEach((el, index) => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(30px)';
-                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                el.style.transitionDelay = `${index * 0.1}s`;
-            });
-
-            const animateOnScroll = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            elements.forEach(el => animateOnScroll.observe(el));
-        }
-
-        // Initialize animations when DOM is loaded
-        document.addEventListener('DOMContentLoaded', initScrollAnimations);
     </script>
 </body>
 </html>
