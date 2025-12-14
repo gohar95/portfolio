@@ -3,1769 +3,562 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gohar Zafar | Professional Mobile Application Developer </title>
-    <meta name="description" content="Professional Flutter developer specializing in cross-platform mobile applications. View my portfolio of live apps including e-commerce, auction platforms, and productivity tools.">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <title>Gohar Zafar - Senior Mobile Application Developer</title>
     <style>
-        /* CSS Variables */
-        :root {
-            --primary-color: #38bdf8; /* sky-400 */
-            --secondary-color: #0ea5e9; /* sky-500 */
-            --accent-color: #60a5fa; /* blue-400 */
-            --text-primary: #f8fafc; /* slate-50 */
-            --text-secondary: #94a3b8; /* slate-400 */
-            --text-dark: #1e293b; /* slate-800 */
-            --bg-primary: #0f172a; /* slate-900 */
-            --bg-secondary: #1e293b; /* slate-800 */
-            --bg-tertiary: #334155; /* slate-700 */
-            --border-color: #334155; /* slate-700 */
-            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-            --glow: 0 0 20px rgba(56, 189, 248, 0.15);
-            --gradient-primary: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
-            font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: var(--text-secondary);
-            background: var(--bg-primary);
+            color: #282828;
+            background: #f5f5f5;
+            padding: 20px;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            background: white;
+            padding: 40px 50px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
         }
 
-        /* Navigation */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(15, 23, 42, 0.75);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-color);
-            z-index: 1000;
-            transition: all 0.3s ease;
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #0047ab;
+            padding-bottom: 20px;
         }
 
-        .navbar.scrolled {
-            box-shadow: var(--shadow-md);
+        .header h1 {
+            color: #0047ab;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
         }
 
-        .nav-container {
+        .header .title {
+            color: #e67e22;
+            font-size: 1.4em;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            color: #282828;
+            font-size: 0.95em;
+            line-height: 1.8;
+        }
+
+        .contact-info a {
+            color: #007acc;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            color: #003366;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #0047ab;
+            padding-bottom: 5px;
+        }
+
+        /* Professional Summary */
+        .summary {
+            text-align: justify;
+            line-height: 1.8;
+        }
+
+        /* Core Competencies */
+        .competencies {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .competencies li {
+            list-style: none;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .competencies li:before {
+            content: "■";
+            color: #0047ab;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Technical Skills */
+        .skills-list {
+            list-style: none;
+        }
+
+        .skills-list li {
+            margin-bottom: 12px;
+            line-height: 1.8;
+        }
+
+        .skill-category {
+            color: #003366;
+            font-weight: 700;
+        }
+
+        /* Experience */
+        .experience-item {
+            margin-bottom: 25px;
+        }
+
+        .experience-header {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            padding: 1rem 1.5rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            margin-bottom: 10px;
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            text-decoration: none;
-            text-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+        .experience-header h3 {
+            color: #0047ab;
+            font-size: 1.15em;
+            margin-bottom: 5px;
         }
 
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
+        .company {
+            color: #282828;
+            font-style: italic;
         }
 
-        .nav-link {
-            text-decoration: none;
-            color: var(--text-primary);
-            font-weight: 500;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--primary-color);
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary-color);
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 100%;
-        }
-
-        .mobile-menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-
-        .mobile-menu-toggle span {
-            width: 25px;
-            height: 3px;
-            background: var(--text-primary);
-            margin: 3px 0;
-            transition: 0.3s;
-        }
-
-        /* Hero Section */
-        .hero {
-            background-color: var(--bg-primary);
-            background-image: radial-gradient(circle at 25px 25px, rgba(56, 189, 248, 0.2) 2%, transparent 0%), 
-                              radial-gradient(circle at 75px 75px, rgba(56, 189, 248, 0.2) 2%, transparent 0%);
-            background-size: 100px 100px;
-            color: var(--text-primary);
-            padding: 140px 0 100px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: none;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, var(--primary-color), #fff, var(--primary-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-fill-color: transparent;
-            background-size: 200% 100%;
-            animation: fadeInUp 0.8s ease, backgroundPan 3s linear infinite;
-        }
-
-        .hero-subtitle {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-            color: var(--text-secondary);
-            animation: fadeInUp 0.8s ease 0.2s both;
-        }
-
-        .hero-description {
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto 2rem;
-            color: var(--text-secondary);
-            animation: fadeInUp 0.8s ease 0.4s both;
-        }
-
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin: 3rem 0;
-            flex-wrap: wrap;
-        }
-
-        .stat-item {
-            text-align: center;
-            animation: fadeInUp 0.8s ease 0.6s both;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            display: block;
-            color: var(--primary-color);
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            animation: fadeInUp 0.8s ease 0.8s both;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.875rem 1.5rem;
-            border-radius: 0.5rem;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-            cursor: pointer;
-        }
-
-        .btn-primary {
-            background: var(--primary-color);
-            color: var(--text-dark);
-        }
-
-        .btn-primary:hover {
-            background: var(--secondary-color);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
-        }
-
-        .btn-secondary {
-            color: var(--text-primary);
-            border-color: var(--border-color);
-        }
-
-        .btn-secondary:hover {
-            background: var(--bg-tertiary);
-            border-color: var(--primary-color);
-            color: var(--primary-color);
-        }
-
-        /* About Section */
-        .about {
-            padding: 5rem 0;
-            background: var(--bg-secondary);
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        .section-subtitle {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 4rem;
-            align-items: center;
-            margin-bottom: 4rem;
-        }
-        
-        .about-image-container {
-            width: 100%;
-            max-width: 300px;
-            margin: 0 auto;
-        }
-
-        .profile-picture {
-            width: 100%;
-            border-radius: 50%;
-            border: 5px solid var(--border-color);
-            box-shadow: 0 0 30px rgba(56, 189, 248, 0.2);
-            transition: transform 0.3s ease;
-        }
-
-        .profile-picture:hover {
-            transform: scale(1.05);
-        }
-
-        .about-text h3 {
-            font-size: 1.5rem;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-        }
-
-        .about-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-        }
-
-        .skills-section {
-            margin-top: 4rem;
-        }
-
-        .skills-title {
-            text-align: center;
-            font-size: 1.75rem;
-            color: var(--text-primary);
-            margin-bottom: 2rem;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .skill-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 1rem;
-            background: var(--bg-primary);
-            border-radius: 0.5rem;
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-        }
-
-        .skill-item:hover {
-            border-color: var(--primary-color);
-            transform: translateY(-3px);
-            box-shadow: var(--glow);
-        }
-
-        .skill-icon {
-            width: 2.5rem;
-            height: 2.5rem;
-            background: var(--gradient-primary);
-            border-radius: 0.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-primary);
-            font-size: 1.2rem;
-        }
-
-        .skill-name {
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        /* Experience Section */
-        .experience {
-            padding: 5rem 0;
-            background: var(--bg-secondary);
-        }
-
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 2rem auto 0;
-            padding: 2rem 0;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--border-color);
-            transform: translateX(-50%);
-        }
-
-        .timeline-item {
-            position: relative;
-            width: 50%;
-            padding: 1rem 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .timeline-item:nth-child(odd) {
-            left: 0;
-            padding-right: 4rem;
+        .date-location {
             text-align: right;
         }
 
-        .timeline-item:nth-child(even) {
-            left: 50%;
-            padding-left: 4rem;
-        }
-
-        .timeline-dot {
-            content: '';
-            position: absolute;
-            top: 20px;
-            width: 16px;
-            height: 16px;
-            background: var(--primary-color);
-            border-radius: 50%;
-            border: 3px solid var(--bg-secondary);
-            z-index: 1;
-        }
-
-        .timeline-item:nth-child(odd) .timeline-dot {
-            right: -8px;
-        }
-
-        .timeline-item:nth-child(even) .timeline-dot {
-            left: -8px;
-        }
-
-        .timeline-content {
-            background: var(--bg-primary);
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-        }
-        
-        .timeline-content:hover {
-            border-color: var(--primary-color);
-            transform: translateY(-3px);
-            box-shadow: var(--glow);
-        }
-
-        .timeline-date {
-            display: block;
-            font-size: 0.9rem;
+        .date {
+            color: #e67e22;
             font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
+            display: block;
         }
 
-        .timeline-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-company {
+        .location {
+            color: #282828;
             font-style: italic;
-            margin-bottom: 1rem;
-            color: var(--text-secondary);
+            font-size: 0.95em;
         }
 
-        .timeline-description {
-            font-size: 0.95rem;
+        .responsibilities {
+            list-style: disc;
+            margin-left: 20px;
+        }
+
+        .responsibilities li {
+            margin-bottom: 8px;
             line-height: 1.6;
         }
 
-        /* Portfolio Section */
-        .portfolio {
-            padding: 5rem 0;
+        /* Published Apps */
+        .apps-list {
+            list-style: none;
         }
 
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+        .apps-list li {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            position: relative;
         }
 
-        .portfolio-card {
-            background: var(--bg-secondary);
-            border-radius: 1rem;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            border: 1px solid var(--border-color);
+        .apps-list li:before {
+            content: "■";
+            color: #0047ab;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
         }
 
-        .portfolio-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--glow);
-            border-color: var(--primary-color);
-        }
-
-        .card-header {
-            padding: 1.5rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .card-title {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .app-icon {
-            width: 3rem;
-            height: 3rem;
-            background: var(--gradient-primary);
-            border-radius: 0.75rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-primary);
-            font-size: 1.5rem;
-        }
-
-        .app-image {
-            width: 3rem;
-            height: 3rem;
-            border-radius: 0.75rem;
-            object-fit: cover;
-            border: 2px solid var(--border-color);
-            transition: all 0.3s ease;
-        }
-
-        .app-image:hover {
-            transform: scale(1.1);
-            border-color: var(--primary-color);
-        }
-
-        .card-title h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .card-category {
-            display: inline-block;
-            background: var(--bg-tertiary);
-            color: var(--text-secondary);
-            padding: 0.25rem 0.75rem;
-            border-radius: 1rem;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-
-        .card-content {
-            padding: 1.5rem;
-        }
-
-        .card-description {
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-
-        .card-features {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .feature-tag {
-            background: var(--accent-color);
-            color: var(--bg-primary);
-            padding: 0.25rem 0.75rem;
-            border-radius: 1rem;
-            font-size: 0.75rem;
-            font-weight: 500;
-        }
-
-        .card-links {
-            display: flex;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-        }
-
-        .store-btn {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background: var(--bg-tertiary);
-            color: var(--text-primary);
-            text-decoration: none;
-            border-radius: 0.5rem;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-
-        .store-btn:hover {
-            background: var(--primary-color);
-            color: var(--text-dark);
-            transform: translateY(-1px);
-        }
-
-        .store-btn i {
-            font-size: 1rem;
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 5rem 0;
-            background: var(--bg-primary);
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            margin-top: 3rem;
-        }
-
-        .contact-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        .contact-info p {
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            line-height: 1.6;
-        }
-
-        .contact-methods {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .contact-method {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1rem;
-            background: var(--bg-secondary);
-            border-radius: 0.5rem;
-            border: 1px solid var(--border-color);
-            text-decoration: none;
-            color: var(--text-primary);
-            transition: all 0.3s ease;
-        }
-
-        .contact-method:hover {
-            border-color: var(--primary-color);
-            transform: translateX(5px);
-            box-shadow: var(--glow);
-        }
-
-        .contact-method i {
-            width: 2rem;
-            height: 2rem;
-            background: var(--gradient-primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-primary);
-            font-size: 0.9rem;
-        }
-
-        .contact-form {
-            background: var(--bg-secondary);
-            padding: 2rem;
-            border-radius: 1rem;
-            border: 1px solid var(--border-color);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
+        .app-title {
+            color: #0047ab;
+            font-weight: 700;
+            font-size: 1.1em;
             display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: var(--text-primary);
+            margin-bottom: 5px;
         }
 
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid var(--border-color);
-            border-radius: 0.5rem;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
+        .app-description {
+            margin-bottom: 5px;
+            line-height: 1.6;
         }
 
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: var(--glow);
+        .app-links {
+            font-size: 0.9em;
+            color: #666;
         }
 
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--bg-secondary);
-            color: var(--text-primary);
-            padding: 3rem 0 2rem;
-            text-align: center;
-        }
-
-        .footer-content {
-            margin-bottom: 2rem;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-
-        .social-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 3rem;
-            height: 3rem;
-            background: var(--bg-tertiary);
-            border-radius: 50%;
-            color: var(--text-primary);
+        .app-links a {
+            color: #007acc;
             text-decoration: none;
-            transition: all 0.3s ease;
+            word-break: break-all;
         }
 
-        .social-link:hover {
-            background: var(--primary-color);
-            transform: scale(1.1);
+        .app-links a:hover {
+            text-decoration: underline;
         }
 
-        .footer-bottom {
-            border-top: 1px solid var(--border-color);
-            padding-top: 2rem;
-            color: var(--text-secondary);
+        /* Education */
+        .education-item {
+            display: flex;
+            justify-content: space-between;
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px) scale(0.98);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
+        .education-item h3 {
+            color: #0047ab;
+            font-size: 1.1em;
         }
 
-        @keyframes backgroundPan {
-            from { background-position: 0% center; }
-            to { background-position: -200% center; }
+        .education-details {
+            font-style: italic;
+            color: #282828;
         }
 
-        .fade-in-up {
-            animation: fadeInUp 0.6s ease forwards;
+        .education-date {
+            color: #e67e22;
+            font-weight: 600;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-menu {
-                position: fixed;
-                top: 70px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 70px);
-                background: var(--bg-primary);
-                flex-direction: column;
-                justify-content: flex-start;
-                align-items: center;
-                padding-top: 2rem;
-                transition: left 0.3s ease;
-                box-shadow: var(--shadow-lg);
-            }
-
-            .nav-menu.active {
-                left: 0;
-            }
-
-            .mobile-menu-toggle {
-                display: flex;
-            }
-
-            .mobile-menu-toggle.active span:nth-child(1) {
-                transform: rotate(-45deg) translate(-5px, 6px);
-            }
-
-            .mobile-menu-toggle.active span:nth-child(2) {
-                opacity: 0;
-            }
-
-            .mobile-menu-toggle.active span:nth-child(3) {
-                transform: rotate(45deg) translate(-5px, -6px);
-            }
-
-            .hero h1 {
-                font-size: 3rem;
-            }
-
-            .hero-stats {
-                gap: 2rem;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .about-image-container {
-                margin-bottom: 2rem;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .timeline::before {
-                left: 8px;
-                transform: translateX(0);
-            }
-
-            .timeline-item {
-                width: 100%;
-                left: 0 !important;
-                padding-left: 3rem;
-                padding-right: 1rem;
-                text-align: left !important;
-            }
-
-            .timeline-dot {
-                left: 0 !important;
-            }
-
-            .contact-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .card-links {
-                flex-direction: column;
-            }
-
-            .container {
-                padding: 0 1rem;
-            }
+        /* Soft Skills */
+        .soft-skills-list {
+            list-style: none;
         }
 
-        @media (max-width: 480px) {
-            .hero {
-                padding: 100px 0 60px;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .card-content {
-                padding: 1rem;
-            }
-
-            .card-header {
-                padding: 1rem;
-            }
+        .soft-skills-list li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
         }
 
-        /* Accessibility */
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
+        .soft-skills-list li:before {
+            content: "■";
+            color: #0047ab;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
         }
 
-        /* Print Styles */
+        strong {
+            font-weight: 600;
+        }
+
         @media print {
-            .navbar, .footer, .contact-form {
-                display: none;
+            body {
+                background: white;
+                padding: 0;
             }
-            
-            .hero {
-                background: none;
-                color: black;
-                background-color: white; /* For printing */
+            .container {
+                box-shadow: none;
+                padding: 20px;
             }
-            
-            .hero h1 {
-                background: none;
-                -webkit-text-fill-color: initial;
-                animation: none;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
             }
-            
-            .portfolio-card {
-                break-inside: avoid;
-                margin-bottom: 1rem;
+            .competencies {
+                grid-template-columns: 1fr;
+            }
+            .experience-header {
+                flex-direction: column;
+            }
+            .date-location {
+                text-align: left;
+                margin-top: 5px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#home" class="logo">Gohar Zafar</a>
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>GOHAR ZAFAR</h1>
+            <div class="title">Senior Mobile Application Developer & Tester</div>
+            <div class="contact-info">
+                Lahore, Punjab, Pakistan<br>
+                <a href="mailto:gohar.zafar123@gmail.com">gohar.zafar123@gmail.com</a> | +92-308-1865705<br>
+                <a href="https://www.linkedin.com/in/gohardev95/" target="_blank">linkedin.com/in/gohardev95</a> | 
+                <a href="https://github.com/gohar95" target="_blank">github.com/gohar95</a>
+            </div>
+        </div>
+
+        <!-- Professional Summary -->
+        <div class="section">
+            <h2>Professional Summary</h2>
+            <p class="summary">
+                Results-driven <strong>Senior Mobile Application Developer</strong> with <strong>5 years</strong> of expertise in <strong>Flutter, React Native, Android, and iOS development</strong>. Proven track record of delivering <strong>50+ enterprise-grade applications</strong> with <strong>200K+ combined users</strong>. Specialized in <strong>cross-platform development, performance optimization, CI/CD implementation</strong>, and <strong>agile project management</strong>. Expert in <strong>full software development lifecycle (SDLC)</strong>, from requirements gathering to <strong>App Store and Play Store deployment</strong>. Strong background in <strong>team leadership, code review, mentoring</strong>, and building <strong>scalable, high-performance mobile solutions</strong>.
+            </p>
+        </div>
+
+        <!-- Core Competencies -->
+        <div class="section">
+            <h2>Core Competencies & Expertise</h2>
+            <ul class="competencies">
+                <li><strong>Mobile App Development</strong></li>
+                <li><strong>Cross-Platform Development</strong></li>
+                <li><strong>Native Android & iOS</strong></li>
+                <li><strong>Flutter & React Native</strong></li>
+                <li><strong>Software Architecture</strong></li>
+                <li><strong>Performance Optimization</strong></li>
+                <li><strong>Test-Driven Development (TDD)</strong></li>
+                <li><strong>Automated Testing & QA</strong></li>
+                <li><strong>CI/CD Pipeline Management</strong></li>
+                <li><strong>Version Control (Git)</strong></li>
+                <li><strong>RESTful API Integration</strong></li>
+                <li><strong>Firebase & Cloud Services</strong></li>
+                <li><strong>Payment Gateway Integration</strong></li>
+                <li><strong>Real-time Applications</strong></li>
+                <li><strong>WebSocket & GraphQL</strong></li>
+                <li><strong>Push Notifications</strong></li>
+                <li><strong>State Management Solutions</strong></li>
+                <li><strong>Code Review & Refactoring</strong></li>
+                <li><strong>Agile/Scrum Methodology</strong></li>
+                <li><strong>Team Leadership & Mentoring</strong></li>
+                <li><strong>Project Management</strong></li>
+                <li><strong>Client Communication</strong></li>
+                <li><strong>Problem Solving & Debugging</strong></li>
+                <li><strong>App Store Optimization (ASO)</strong></li>
             </ul>
-            <div class="mobile-menu-toggle" id="mobile-menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
+        </div>
+
+        <!-- Technical Skills -->
+        <div class="section">
+            <h2>Technical Skills</h2>
+            <ul class="skills-list">
+                <li>
+                    <span class="skill-category">Mobile Development:</span> Flutter • React Native • Dart • JavaScript/TypeScript • Kotlin • Swift • Java • Android SDK • iOS SDK • Xcode • Android Studio
+                </li>
+                <li>
+                    <span class="skill-category">State Management:</span> Provider • GetX • BLoC Pattern • Redux • MobX • Riverpod
+                </li>
+                <li>
+                    <span class="skill-category">Testing & Quality Assurance:</span> Unit Testing • Widget Testing • Integration Testing • End-to-End Testing • Test-Driven Development (TDD) • Automated QA • Selenium • Appium
+                </li>
+                <li>
+                    <span class="skill-category">Backend & APIs:</span> Firebase • REST APIs • GraphQL • WebSocket • Node.js • Cloud Functions • AWS • Real-time Database • Microservices
+                </li>
+                <li>
+                    <span class="skill-category">Payment & Authentication:</span> Stripe Integration • PayPal • In-App Purchases • OAuth 2.0 • JWT • Social Authentication • Biometric Authentication
+                </li>
+                <li>
+                    <span class="skill-category">DevOps & Tools:</span> Git • GitHub • GitLab • Bitbucket • CI/CD • Jenkins • Fastlane • Docker • Jira • Slack • Trello
+                </li>
+                <li>
+                    <span class="skill-category">Design & Methodology:</span> Material Design • Human Interface Guidelines • Responsive Design • UI/UX Implementation • Agile • Scrum • Kanban • SOLID Principles
+                </li>
+            </ul>
+        </div>
+
+        <!-- Soft Skills -->
+        <div class="section">
+            <h2>Soft Skills & Leadership</h2>
+            <ul class="soft-skills-list">
+                <li>Team Leadership • Technical Mentoring • Cross-functional Collaboration • Project Management • Stakeholder Management</li>
+                <li>Requirements Analysis • Strategic Planning • Code Review • Problem Solving • Debugging • Technical Documentation</li>
+                <li>Client Communication • Presentation Skills • Time Management • Adaptability • Critical Thinking • Self-Motivated</li>
+            </ul>
+        </div>
+
+        <!-- Professional Experience -->
+        <div class="section">
+            <h2>Professional Experience</h2>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3>Senior Flutter Developer</h3>
+                        <p class="company">ZRR Tech</p>
+                    </div>
+                    <div class="date-location">
+                        <span class="date">Jan 2025 - Present</span>
+                        <span class="location">Lahore, Punjab, Pakistan</span>
+                    </div>
+                </div>
+                <ul class="responsibilities">
+                    <li>Lead <strong>full-stack mobile development</strong> of <strong>3+ enterprise-grade applications</strong> serving <strong>50,000+ active users</strong> with <strong>real-time features</strong></li>
+                    <li><strong>Mentor and manage</strong> team of <strong>5 junior developers</strong>, conduct <strong>weekly code reviews</strong> and implement <strong>best practices</strong>, improving <strong>code quality by 40%</strong></li>
+                    <li>Decreased app <strong>crash rate from 2.1% to 0.3%</strong> through <strong>comprehensive testing strategies</strong>, <strong>automated QA</strong>, and <strong>performance monitoring</strong></li>
+                    <li>Optimized <strong>CI/CD pipeline</strong> and <strong>build automation</strong>, lowering average <strong>build time by 35%</strong> and improving <strong>deployment efficiency</strong></li>
+                    <li>Implement <strong>scalable architecture patterns</strong>, <strong>state management solutions</strong>, and <strong>RESTful API integrations</strong> for enterprise clients</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3>Flutter Developer</h3>
+                        <p class="company">VitalBlze Pvt Ltd</p>
+                    </div>
+                    <div class="date-location">
+                        <span class="date">Jan 2024 - Dec 2024</span>
+                        <span class="location">Remote</span>
+                    </div>
+                </div>
+                <ul class="responsibilities">
+                    <li>Deployed <strong>4 production-ready scalable applications</strong> with <strong>99.9% uptime</strong>, supporting <strong>100K+ monthly active users</strong> across <strong>iOS and Android platforms</strong></li>
+                    <li>Enhanced <strong>application performance</strong> and reduced loading time by <strong>45%</strong> through <strong>code optimization</strong>, <strong>lazy loading</strong>, and <strong>caching strategies</strong></li>
+                    <li>Authored <strong>200+ code fixes</strong>, <strong>feature enhancements</strong>, and <strong>security patches</strong>, reducing <strong>production bugs by 60%</strong> and improving <strong>app stability</strong></li>
+                    <li>Expanded <strong>automated testing coverage from 30% to 85%</strong> using <strong>unit tests</strong>, <strong>widget tests</strong>, and <strong>integration tests</strong>, improving <strong>release confidence</strong></li>
+                    <li>Integrated <strong>third-party APIs</strong>, <strong>payment gateways</strong>, <strong>push notifications</strong>, and <strong>analytics tools</strong> for enhanced functionality</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3>Flutter Developer</h3>
+                        <p class="company">Blue World City</p>
+                    </div>
+                    <div class="date-location">
+                        <span class="date">Jan 2024 - Dec 2024</span>
+                        <span class="location">Lahore, Punjab, Pakistan</span>
+                    </div>
+                </div>
+                <ul class="responsibilities">
+                    <li><strong>Supervised and coordinated</strong> team of <strong>8 developers</strong> using <strong>Agile/Scrum methodology</strong> and delivered <strong>5 mobile applications ahead of schedule</strong></li>
+                    <li>Built <strong>high-traffic member portal app</strong> processing <strong>10,000+ daily transactions</strong> with <strong>zero downtime</strong>, implementing <strong>secure payment processing</strong></li>
+                    <li>Enhanced <strong>API response time by 50%</strong> through <strong>efficient data caching</strong>, <strong>database optimization</strong>, and <strong>backend integration improvements</strong></li>
+                    <li>Increased <strong>user retention by 30%</strong> through improved <strong>UI/UX design</strong>, <strong>feature implementations</strong>, and <strong>user feedback integration</strong></li>
+                    <li>Implemented <strong>Firebase services</strong>, <strong>cloud storage</strong>, <strong>authentication systems</strong>, and <strong>real-time database synchronization</strong></li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3>Android/Flutter Developer</h3>
+                        <p class="company">Vespert Tech</p>
+                    </div>
+                    <div class="date-location">
+                        <span class="date">Sep 2021 - Dec 2023</span>
+                        <span class="location">Gujranwala, Pakistan</span>
+                    </div>
+                </div>
+                <ul class="responsibilities">
+                    <li>Successfully delivered <strong>12+ client projects</strong> within tight deadlines with <strong>95% client satisfaction rate</strong> and <strong>positive feedback</strong></li>
+                    <li>Minimized <strong>application size by 40%</strong> through <strong>code optimization</strong>, <strong>asset compression</strong>, and <strong>ProGuard/R8 implementation</strong></li>
+                    <li>Expanded <strong>app performance by 55%</strong> through <strong>memory leak fixes</strong>, <strong>UI optimization</strong>, and <strong>background process management</strong></li>
+                    <li>Delivered <strong>20+ feature updates</strong> monthly with <strong>98% success rate</strong> in production using <strong>agile sprints</strong> and <strong>continuous deployment</strong></li>
+                    <li>Collaborated with <strong>designers</strong>, <strong>backend developers</strong>, and <strong>QA teams</strong> for <strong>seamless project delivery</strong></li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3>Android Developer</h3>
+                        <p class="company">Eagale Solutions</p>
+                    </div>
+                    <div class="date-location">
+                        <span class="date">Jun 2021 - Aug 2023</span>
+                        <span class="location">Gujranwala, Pakistan</span>
+                    </div>
+                </div>
+                <ul class="responsibilities">
+                    <li>Engineered <strong>8 custom native Android applications</strong> with average <strong>4.5+ star rating</strong> on <strong>Google Play Store</strong> and <strong>50K+ downloads</strong></li>
+                    <li>Reduced <strong>application crashes by 60%</strong> (from 5% to 2%) through <strong>proactive analytics monitoring</strong>, <strong>crash reporting</strong>, and <strong>bug fixes</strong></li>
+                    <li>Increased <strong>app download rate by 70%</strong> through <strong>performance improvements</strong>, <strong>user feedback implementation</strong>, and <strong>App Store Optimization (ASO)</strong></li>
+                    <li>Established <strong>reusable component libraries</strong> and <strong>design systems</strong>, reducing <strong>development time by 25%</strong> and improving <strong>code maintainability</strong></li>
+                    <li>Implemented <strong>Material Design guidelines</strong>, <strong>SQLite databases</strong>, <strong>local storage</strong>, and <strong>offline functionality</strong></li>
+                </ul>
             </div>
         </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Flutter Developer</h1>
-                <p class="hero-subtitle">Cross-Platform Mobile App Specialist</p>
-                <p class="hero-description">
-                    Passionate about creating beautiful, performant mobile applications that work seamlessly across iOS and Android platforms. Specialized in Flutter development with expertise in modern app architecture and user experience design.
-                </p>
-                
-                <div class="hero-stats">
-                     <div class="stat-item">
-                        <span class="stat-number">20</span>
-                        <span class="stat-label">Applications Created</span>
+        <!-- Published Applications -->
+        <div class="section">
+            <h2>Published Applications</h2>
+            <p style="margin-bottom: 15px;"><strong>Featured Apps on Google Play Store & Apple App Store:</strong></p>
+            <ul class="apps-list">
+                <li>
+                    <span class="app-title">MyLink - Muslim Marriage App</span>
+                    <p class="app-description">Social networking app with real-time chat, user matching, and premium subscriptions</p>
+                    <div class="app-links">
+                        <em>Play Store:</em> <a href="https://play.google.com/store/apps/details?id=com.my.link.app" target="_blank">https://play.google.com/store/apps/details?id=com.my.link.app</a><br>
+                        <em>App Store:</em> <a href="https://apps.apple.com/us/app/mylink-muslim-marriage-app/id6742732774" target="_blank">https://apps.apple.com/us/app/mylink-muslim-marriage-app/id6742732774</a>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number">12</span>
-                        <span class="stat-label">Live Applications</span>
+                </li>
+                <li>
+                    <span class="app-title">TradeMe.ae</span>
+                    <p class="app-description">E-commerce marketplace with payment gateway integration and multi-vendor support</p>
+                    <div class="app-links">
+                        <em>Play Store:</em> <a href="https://play.google.com/store/apps/details?id=com.trademe.ae&hl=en" target="_blank">https://play.google.com/store/apps/details?id=com.trademe.ae&hl=en</a>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number">2</span>
-                        <span class="stat-label">Platforms</span>
+                </li>
+                <li>
+                    <span class="app-title">Blue World City - Members Portal & Digital Wallet</span>
+                    <p class="app-description">Financial applications with secure transactions and payment processing</p>
+                    <div class="app-links">
+                        <em>Members Portal:</em> <a href="https://play.google.com/store/apps/details?id=com.bwc.mobile.members" target="_blank">https://play.google.com/store/apps/details?id=com.bwc.mobile.members</a><br>
+                        <em>Digital Wallet:</em> <a href="https://play.google.com/store/apps/details?id=com.wallet.bwc" target="_blank">https://play.google.com/store/apps/details?id=com.wallet.bwc</a>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number">6</span>
-                        <span class="stat-label">Industry Sectors</span>
+                </li>
+                <li>
+                    <span class="app-title">Forces School & College Management Systems</span>
+                    <p class="app-description">Educational management platforms with parent-teacher communication and academic tracking</p>
+                    <div class="app-links">
+                        <em>School:</em> <a href="https://play.google.com/store/apps/details?id=com.forces.school" target="_blank">https://play.google.com/store/apps/details?id=com.forces.school</a><br>
+                        <em>College:</em> <a href="https://play.google.com/store/apps/details?id=com.forces.college" target="_blank">https://play.google.com/store/apps/details?id=com.forces.college</a>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-label">Client Satisfaction</span>
+                </li>
+                <li>
+                    <span class="app-title">Unwind by Umaans</span>
+                    <p class="app-description">Wellness and lifestyle application with booking features</p>
+                    <div class="app-links">
+                        <em>Play Store:</em> <a href="https://play.google.com/store/apps/details?id=com.unwindby.umaans.unwind&hl=en" target="_blank">https://play.google.com/store/apps/details?id=com.unwindby.umaans.unwind&hl=en</a>
                     </div>
-                </div>
-
-                <div class="cta-buttons">
-                    <a href="#portfolio" class="btn btn-primary">
-                        <i class="fas fa-eye"></i>
-                        View Portfolio
-                    </a>
-                    <a href="" class="btn btn-secondary">
-                        <i class="fas fa-envelope"></i>
-                        Get In Touch
-                    </a>
-                     <a href="cv.pdf" class="btn btn-secondary" download>
-                        <i class="fas fa-download"></i>
-                        Download CV
-                    </a>
-                </div>
-            </div>
+                </li>
+                <li>
+                    <span class="app-title">Habit Tracker & Routine Planner</span>
+                    <p class="app-description">Productivity app with analytics and custom notifications</p>
+                    <div class="app-links">
+                        <em>Play Store:</em> <a href="https://play.google.com/store/apps/details?id=com.hds.habittracker.routineplanner&hl=en" target="_blank">https://play.google.com/store/apps/details?id=com.hds.habittracker.routineplanner&hl=en</a>
+                    </div>
+                </li>
+                <li>
+                    <span class="app-title">Banyan Home</span>
+                    <p class="app-description">Real estate application with property listings and virtual tours</p>
+                    <div class="app-links">
+                        <em>Play Store:</em> <a href="https://play.google.com/store/apps/details?id=com.banyanhome.app&hl=en" target="_blank">https://play.google.com/store/apps/details?id=com.banyanhome.app&hl=en</a><br>
+                        <em>App Store:</em> <a href="https://apps.apple.com/us/app/banyan-home/id6743860965" target="_blank">https://apps.apple.com/us/app/banyan-home/id6743860965</a>
+                    </div>
+                </li>
+            </ul>
         </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">
-                    A snapshot of my skills, passion, and professional journey
-                </p>
-            </div>
-            
-            <div class="about-content">
-                <div class="about-image-container">
-                    <img src="profile.jpeg" alt="Gohar Zafar" class="profile-picture">
+        <!-- Education -->
+        <div class="section">
+            <h2>Education</h2>
+            <div class="education-item">
+                <div>
+                    <h3>University of Sargodha</h3>
+                    <p class="education-details">Bachelor of Science in Software Engineering</p>
                 </div>
-                <div class="about-text">
-                    <h3>Hello, I'm Gohar Zafar.</h3>
-                    <p>
-                        I'm a dedicated and results-driven Flutter developer with a deep passion for building cross-platform mobile applications that are both beautiful and highly functional. My journey in software development is fueled by a desire to solve complex problems and create intuitive, user-centric experiences.
-                    </p>
-                    <p>
-                        With a focus on clean, scalable code and modern architecture patterns like BLoC and Riverpod, I deliver applications that not only meet technical requirements but also provide a seamless and enjoyable experience for the end-user. I'm a lifelong learner, always eager to explore the latest advancements in the Flutter ecosystem and mobile development best practices.
-                    </p>
-                    <p>
-                        My collaborative spirit and strong communication skills enable me to work effectively in team environments, ensuring projects are delivered on time and to the highest standard of quality.
-                    </p>
-                </div>
-            </div>
-
-            <div class="skills-section">
-                <h3 class="skills-title">Core Competencies</h3>
-                <div class="skills-grid">
-                    <div class="skill-item">
-                        <div class="skill-icon">
-                            <i class="fab fa-flutter"></i>
-                        </div>
-                        <span class="skill-name">Flutter Framework</span>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon">
-                            <i class="fab fa-dart-lang"></i>
-                        </div>
-                        <span class="skill-name">Dart Programming</span>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <span class="skill-name">State Management (BLoC/Riverpod)</span>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon">
-                            <i class="fas fa-fire"></i>
-                        </div>
-                        <span class="skill-name">Firebase & Firestore</span>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon">
-                            <i class="fas fa-network-wired"></i>
-                        </div>
-                        <span class="skill-name">REST APIs & GraphQL</span>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <span class="skill-name">Real-time Applications</span>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon">
-                            <i class="fas fa-palette"></i>
-                        </div>
-                        <span class="skill-name">UI/UX Implementation</span>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon">
-                            <i class="fas fa-cogs"></i>
-                        </div>
-                        <span class="skill-name">CI/CD & DevOps</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Work Experience</h2>
-                <p class="section-subtitle">
-                    My professional journey as a mobile application developer
-                </p>
-            </div>
-
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">2025 - Present</span>
-                        <h3 class="timeline-title">Senior Flutter Developer</h3>
-                        <p class="timeline-company">ZRRTech Solutions Pvt Ltd.</p>
-                        <p class="timeline-description">
-                            Leading the development of complex, cross-platform mobile applications for enterprise clients. Architecting scalable solutions, mentoring junior developers, and implementing advanced features like real-time data synchronization and complex animations.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">2024 - 2025</span>
-                        <h3 class="timeline-title">Mid-Level Flutter Developer</h3>
-                        <p class="timeline-company">Blue World City</p>
-                        <p class="timeline-description">
-                            Developed and maintained several e-commerce and logistics applications using Flutter. Collaborated with UI/UX designers to translate wireframes into high-quality code and integrated with various third-party APIs for payments and analytics.
-                        </p>
-                    </div>
-                </div>
-                 <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">2024 - 2025</span>
-                        <h3 class="timeline-title">Remote Flutter Developer</h3>
-                        <p class="timeline-company">Qodix Labs Pvt Ltd.</p>
-                        <p class="timeline-description">
-                            Developed and maintained several e-commerce and logistics applications using Flutter. Collaborated with UI/UX designers to translate wireframes into high-quality code and integrated with various third-party APIs for payments and analytics.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">2023 - 2024</span>
-                        <h3 class="timeline-title">Junior Android Developer</h3>
-                        <p class="timeline-company">Vitalblaze Pvt Ltd. </p>
-                        <p class="timeline-company">UK Based </p>
-                        <p class="timeline-description">
-                            Gained foundational experience in mobile development, working on various small-scale projects. Assisted in bug fixing, feature implementation, and contributed to the full software development lifecycle.
-                        </p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">2021 - 2023</span>
-                        <h3 class="timeline-title">Junior Android Developer</h3>
-                        <p class="timeline-company">Vaspert Tech Pvt Ltd. </p>
-                        <p class="timeline-description">
-                            Gained foundational experience in mobile development, working on various small-scale projects. Assisted in bug fixing, feature implementation, and contributed to the full software development lifecycle.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">My Portfolio</h2>
-                <p class="section-subtitle">
-                    A collection of live mobile applications built with Flutter, showcasing diverse functionality and industry expertise
-                </p>
-            </div>
-            
-            <div class="portfolio-grid">
-                <!-- TradeMe AE -->
-                <div class="portfolio-card">
-                    <div class="card-header">
-                        <div class="card-title">
-                            <div class="app-icon">
-                                <img src="images/trademe.png" alt="TradeMe AE" class="app-image">
-                            </div>
-                            <div>
-                                <h3>TradeMe AE</h3>
-                                <span class="card-category">Auction & Bidding Platform</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <p class="card-description">
-                            A comprehensive UAE-based auction and bidding platform that enables users to participate in live auctions, place real-time bids, and manage their trading activities with advanced security features and seamless payment integration.
-                        </p>
-                        <div class="card-features">
-                            <span class="feature-tag">Live Bidding</span>
-                            <span class="feature-tag">Real-time Updates</span>
-                            <span class="feature-tag">Secure Payments</span>
-                            <span class="feature-tag">User Authentication</span>
-                            <span class="feature-tag">Push Notifications</span>
-                        </div>
-                        <div class="card-links">
-                            <a href="https://play.google.com/store/apps/details?id=com.trademe.ae&hl=en" class="store-btn" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-google-play"></i>
-                                Google Play
-                            </a>
-                             <a href="https://apps.apple.com/pk/app/trademe-ae/id6740152535" class="store-btn" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-apple"></i>
-                                App Store
-                            </a>
-                        </div>
-
-
-                    </div>
-                </div>
-
-                <!-- Khilafat Cola -->
-                <div class="portfolio-card">
-                    <div class="card-header">
-                        <div class="card-title">
-                            <div class="app-icon">
-                                <img src="images/kc.png" alt="Khilafat Cola" class="app-image">
-                            </div>
-                            <div>
-                                <h3>Khilafat Cola</h3>
-                                <span class="card-category">Beverages & Logistics</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <p class="card-description">
-                            Enterprise-grade beverages distribution application featuring 6 specialized modules for comprehensive logistics management, inventory tracking, sales analytics, and distribution network optimization for beverage companies.
-                        </p>
-                        <div class="card-features">
-                            <span class="feature-tag">6 Modules System</span>
-                            <span class="feature-tag">Inventory Management</span>
-                            <span class="feature-tag">Distribution Tracking</span>
-                            <span class="feature-tag">Sales Analytics</span>
-                            <span class="feature-tag">Route Optimization</span>
-                        </div>
-                        <div class="card-links">
-                            <a href="https://play.google.com/store/apps/details?id=com.khilafat.cola&hl=en" class="store-btn" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-google-play"></i>
-                                Google Play
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Unwind By Umaans -->
-                <div class="portfolio-card">
-                    <div class="card-header">
-                        <div class="card-title">
-                            <div class="app-icon">
-                                <i class="fas fa-shopping-bag"></i>
-                            </div>
-                            <div>
-                                <h3>Unwind By Umaans</h3>
-                                <span class="card-category">E-Commerce Platform</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <p class="card-description">
-                            Modern e-commerce platform providing seamless shopping experience with intuitive product browsing, advanced search functionality, secure checkout process, and personalized recommendations for enhanced customer engagement.
-                        </p>
-                        <div class="card-features">
-                            <span class="feature-tag">Product Catalog</span>
-                            <span class="feature-tag">Secure Checkout</span>
-                            <span class="feature-tag">Order Tracking</span>
-                            <span class="feature-tag">Wishlist</span>
-                            <span class="feature-tag">Payment Gateway</span>
-                        </div>
-                        <div class="card-links">
-                            <a href="https://play.google.com/store/apps/details?id=com.unwindby.umaans.unwind&hl=en" class="store-btn" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-google-play"></i>
-                                Google Play
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Habbit Planner -->
-                <div class="portfolio-card">
-                    <div class="card-header">
-                        <div class="card-title">
-                            <div class="app-icon">
-                                <i class="fas fa-tasks"></i>
-                            </div>
-                            <div>
-                                <h3>Habbit Planner</h3>
-                                <span class="card-category">Productivity & Lifestyle</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <p class="card-description">
-                            Smart habit tracking and daily routine management application that helps users build positive habits, track progress with detailed analytics, set goals, and maintain consistent daily schedules with intelligent reminders.
-                        </p>
-                        <div class="card-features">
-                            <span class="feature-tag">Habit Tracking</span>
-                            <span class="feature-tag">Progress Analytics</span>
-                            <span class="feature-tag">Smart Reminders</span>
-                            <span class="feature-tag">Goal Setting</span>
-                            <span class="feature-tag">Streak Counter</span>
-                        </div>
-                        <div class="card-links">
-                            <a href="https://play.google.com/store/apps/details?id=com.hds.habittracker.routineplanner&hl=en" class="store-btn" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-google-play"></i>
-                                Google Play
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Banyan Home -->
-                <div class="portfolio-card">
-                    <div class="card-header">
-                        <div class="card-title">
-                            <div class="app-icon">
-                                <i class="fas fa-home"></i>
-                            </div>
-                            <div>
-                                <h3>Banyan Home</h3>
-                                <span class="card-category">Home & Lifestyle</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <p class="card-description">
-                            Cross-platform home management application available on both Android and iOS, providing comprehensive tools for modern home organization, lifestyle management, and smart home integration with intuitive user interface.
-                        </p>
-                        <div class="card-features">
-                            <span class="feature-tag">Cross-Platform</span>
-                            <span class="feature-tag">Home Management</span>
-                            <span class="feature-tag">Organization Tools</span>
-                            <span class="feature-tag">Lifestyle Tracking</span>
-                            <span class="feature-tag">Smart Integration</span>
-                        </div>
-                        <div class="card-links">
-                            <a href="https://play.google.com/store/apps/details?id=com.banyanhome.app&hl=en" class="store-btn" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-google-play"></i>
-                                Google Play
-                            </a>
-                            <a href="https://apps.apple.com/us/app/banyan-home/id6743860965" class="store-btn" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-apple"></i>
-                                App Store
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- MyLink Muslim Marriage App -->
-                <div class="portfolio-card">
-                    <div class="card-header">
-                        <div class="card-title">
-                            <div class="app-icon">
-                                <img src="images/mylink.png" alt="MyLink Muslim Marriage App" class="app-image">
-                            </div>
-                            <div>
-                                <h3>MyLink Muslim Marriage App</h3>
-                                <span class="card-category">Social Networking & Matchmaking</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <p class="card-description">
-                            Halal Muslim marriage and matchmaking platform designed for serious relationships based on Islamic values. Features advanced matchmaking algorithms, profile verification, secure messaging, and video calling for meaningful connections.
-                        </p>
-                        <div class="card-features">
-                            <span class="feature-tag">Halal Matchmaking</span>
-                            <span class="feature-tag">Profile Verification</span>
-                            <span class="feature-tag">Video Calling</span>
-                            <span class="feature-tag">Secure Messaging</span>
-                            <span class="feature-tag">Advanced Search</span>
-                            <span class="feature-tag">Truth or Dare Games</span>
-                        </div>
-                        <div class="card-links">
-                            <a href="https://play.google.com/store/apps/details?id=com.my.link.app" class="store-btn" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-google-play"></i>
-                                Google Play
-                            </a>
-                            <a href="https://apps.apple.com/app/mylink-muslim-marriage-app/id6742732774" class="store-btn" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-apple"></i>
-                                App Store
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Blue World City -->
-                <div class="portfolio-card">
-                    <div class="card-header">
-                        <div class="card-title">
-                            <div class="app-icon">
-                                <img src="images/bwc.png" alt="Blue World City" class="app-image">
-                            </div>
-                            <div>
-                                <h3>Blue World City</h3>
-                                <span class="card-category">Real Estate & Property Management</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <p class="card-description">
-                            Official BWC mobile application for managing user accounts, payments, and property-related services. Provides comprehensive real estate management features with secure payment processing and account management capabilities.
-                        </p>
-                        <div class="card-features">
-                            <span class="feature-tag">Account Management</span>
-                            <span class="feature-tag">Payment Processing</span>
-                            <span class="feature-tag">Property Services</span>
-                            <span class="feature-tag">User Authentication</span>
-                            <span class="feature-tag">Real-time Updates</span>
-                        </div>
-                        <div class="card-links">
-                            <a href="https://play.google.com/store/apps/details?id=com.bwc.mobile.members" class="store-btn" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-google-play"></i>
-                                Google Play
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- BWC Digital Wallet -->
-                <div class="portfolio-card">
-                    <div class="card-header">
-                        <div class="card-title">
-                            <div class="app-icon">
-                                <i class="fas fa-wallet"></i>
-                            </div>
-                            <div>
-                                <h3>BWC Digital Wallet</h3>
-                                <span class="card-category">Financial Management & Ledger</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <p class="card-description">
-                            Customer-specific digital wallet application for managing dealer ledgers, financial transactions, and verification receipts. Streamlines dealer financial management with secure transaction tracking and comprehensive reporting.
-                        </p>
-                        <div class="card-features">
-                            <span class="feature-tag">Dealer Ledger</span>
-                            <span class="feature-tag">Financial Tracking</span>
-                            <span class="feature-tag">Verification Receipts</span>
-                            <span class="feature-tag">Transaction History</span>
-                            <span class="feature-tag">Secure Payments</span>
-                        </div>
-                        <div class="card-links">
-                            <a href="https://play.google.com/store/apps/details?id=com.wallet.bwc" class="store-btn" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-google-play"></i>
-                                Google Play
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                
-
-                <!-- FSCS School Management -->
-                <div class="portfolio-card">
-                    <div class="card-header">
-                        <div class="card-title">
-                            <div class="app-icon">
-                                <img src="images/fscs.png" alt="FSCS School Management" class="app-image">
-                            </div>
-                            <div>
-                                <h3>FSCS School Management</h3>
-                                <span class="card-category">Educational Management System</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <p class="card-description">
-                            Comprehensive school management application by BWC designed to streamline educational operations. Features student management, academic tracking, administrative tools, and communication systems for educational institutions.
-                        </p>
-                        <div class="card-features">
-                            <span class="feature-tag">Student Management</span>
-                            <span class="feature-tag">Academic Tracking</span>
-                            <span class="feature-tag">Administrative Tools</span>
-                            <span class="feature-tag">Communication System</span>
-                            <span class="feature-tag">Performance Analytics</span>
-                        </div>
-                        <div class="card-links">
-                            <a href="https://play.google.com/store/apps/details?id=com.forces.school" class="store-btn" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-google-play"></i>
-                                Google Play
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- FGC College Management -->
-                <div class="portfolio-card">
-                    <div class="card-header">
-                        <div class="card-title">
-                            <div class="app-icon">
-                                <img src="images/fgc.png" alt="FGC College Management" class="app-image">
-                            </div>
-                            <div>
-                                <h3>FGC College Management</h3>
-                                <span class="card-category">Higher Education Management</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <p class="card-description">
-                            Advanced college management application for FGC (Forces College) providing comprehensive tools for higher education administration, student services, academic management, and institutional operations.
-                        </p>
-                        <div class="card-features">
-                            <span class="feature-tag">College Administration</span>
-                            <span class="feature-tag">Student Services</span>
-                            <span class="feature-tag">Academic Management</span>
-                            <span class="feature-tag">Institutional Operations</span>
-                            <span class="feature-tag">Higher Education Tools</span>
-                        </div>
-                        <div class="card-links">
-                            <a href="https://play.google.com/store/apps/details?id=com.forces.college" class="store-btn" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-google-play"></i>
-                                Google Play
-                            </a>
-                        </div>
-                    </div>
+                <div>
+                    <span class="education-date">June 2021</span>
+                    <p class="education-details">Gujranwala, Pakistan</p>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Let's Work Together</h2>
-                <p class="section-subtitle">
-                    Ready to bring your mobile app idea to life? Let's discuss your project and create something amazing together.
-                </p>
-            </div>
-            
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Get In Touch</h3>
-                    <p>
-                        I'm always open to discussing new opportunities, interesting projects, and potential collaborations. Whether you need a complete mobile app solution or consulting on Flutter development, I'm here to help.
-                    </p>
-                    
-                    <div class="contact-methods">
-                        <a href="mailto:your.email@example.com" class="contact-method">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <strong>Email</strong>
-                                <p>gohar.zafar123@gmail.com</p>
-                            </div>
-                        </a>
-                        <a href="tel:+92-308-1865705" class="contact-method">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <strong>Phone</strong>
-                                <p>+923081865705</p>
-                            </div>
-                        </a>
-                        <a href="https://www.linkedin.com/in/gohardev95/" class="contact-method" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-linkedin"></i>
-                            <div>
-                                <strong>LinkedIn</strong>
-                                <p>Connect with me</p>
-                            </div>
-                        </a>
-                        <a href="https://github.com/gohar95?tab=repositories" class="contact-method" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-github"></i>
-                            <div>
-                                <strong>GitHub</strong>
-                                <p>View my code</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                
-                <form class="contact-form" id="contact-form">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" placeholder="Brainstorm your ideas..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">
-                        <i class="fas fa-paper-plane"></i>
-                        Send Message
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <h3>Looking Forward to seeing you</h3>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 Gohar Zafar. All rights reserved. | Designed with ❤️ </p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Mobile Menu Toggle
-        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-        const navMenu = document.getElementById('nav-menu');
-
-        mobileMenuToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            mobileMenuToggle.classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                mobileMenuToggle.classList.remove('active');
-            });
-        });
-
-        // Navbar scroll effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Active navigation link based on scroll position
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        function updateActiveNavLink() {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100;
-                const sectionHeight = section.offsetHeight;
-                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        }
-
-        window.addEventListener('scroll', updateActiveNavLink);
-
-        // Contact form handling
-        const contactForm = document.getElementById('contact-form');
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(contactForm);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const subject = formData.get('subject');
-            const message = formData.get('message');
-            
-            // Simple form validation
-            if (!name || !email || !subject || !message) {
-                alert('Please fill in all fields.');
-                return;
-            }
-            
-            // Email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                alert('Please enter a valid email address.');
-                return;
-            }
-            
-            // Show success message (in a real implementation, you'd send this to a server)
-            alert('Thank you for your message! I\'ll get back to you soon.');
-            contactForm.reset();
-        });
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in-up');
-                }
-            });
-        }, observerOptions);
-
-        // Observe portfolio cards and skill items
-        document.querySelectorAll('.portfolio-card, .skill-item, .stat-item').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Add loading animation for external links
-        document.querySelectorAll('a[target="_blank"]').forEach(link => {
-            link.addEventListener('click', function() {
-                this.style.opacity = '0.7';
-                setTimeout(() => {
-                    this.style.opacity = '1';
-                }, 1000);
-            });
-        });
-
-        // Performance optimization: Lazy load images if any were added
-        if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src;
-                        img.classList.remove('lazy');
-                        imageObserver.unobserve(img);
-                    }
-                });
-            });
-
-            document.querySelectorAll('img[data-src]').forEach(img => {
-                imageObserver.observe(img);
-            });
-        }
-
-        // Add subtle parallax effect to hero section
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const heroContent = document.querySelector('.hero-content');
-            if (heroContent && scrolled < window.innerHeight) {
-                heroContent.style.transform = `translateY(${scrolled * 0.1}px)`;
-                heroContent.style.opacity = 1 - (scrolled / (window.innerHeight / 2));
-            }
-        });
-    </script>
+    </div>
 </body>
 </html>
-
-
-
-
