@@ -1571,7 +1571,7 @@
                     </div>
                 </div>
                 
-                <form class="contact-form" id="contact-form">
+                <form class="contact-form" id="contact-form" method="POST" action="send_mail.php">
                     <div class="form-group">
                         <label for="name">Full Name</label>
                         <input type="text" id="name" name="name" required>
@@ -1665,7 +1665,7 @@
         // Contact form handling
         const contactForm = document.getElementById('contact-form');
         contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
+            // e.preventDefault();
             
             // Get form data
             const formData = new FormData(contactForm);
@@ -1765,5 +1765,6 @@
     </script>
 </body>
 </html>
+
 
 
