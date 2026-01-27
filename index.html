@@ -1540,11 +1540,11 @@
                     </p>
                     
                     <div class="contact-methods">
-                        <a href="mailto:your.email@example.com" class="contact-method">
+                        <a href="/cdn-cgi/l/email-protection#e990869c9bc78c84888085a98c91888499858cc78a8684" class="contact-method">
                             <i class="fas fa-envelope"></i>
                             <div>
                                 <strong>Email</strong>
-                                <p>gohar.zafar123@gmail.com</p>
+                                <p><span class="__cf_email__" data-cfemail="a8cfc7c0c9da86d2c9cec9da999a9be8cfc5c9c1c486cbc7c5">[email&#160;protected]</span></p>
                             </div>
                         </a>
                         <a href="tel:+92-308-1865705" class="contact-method">
@@ -1610,7 +1610,18 @@
         </div>
     </footer>
 
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    
     <script>
+        // Initialize EmailJS with your public key
+        (function() {
+            emailjs.init('AN05EWZpZ-QoarlJp');
+        })();
+
         // Mobile Menu Toggle
         const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
         const navMenu = document.getElementById('nav-menu');
@@ -1662,56 +1673,35 @@
 
         window.addEventListener('scroll', updateActiveNavLink);
 
-        // Contact form handling
+        // Contact form handling with EmailJS
         const contactForm = document.getElementById('contact-form');
-        <script>
-const contactForm = document.getElementById('contact-form');
 
-contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
 
-    emailjs.sendForm(
-        'service_7y558r8',
-        'template_ofj18fq',
-        this
-    )
-    .then(function() {
-        alert('Message sent successfully!');
-        contactForm.reset();
-    }, function(error) {
-        alert('Failed to send message. Please try again.');
-        console.error(error);
-    });
-});
-</script>
+            // Show sending indicator
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
 
-        // contactForm.addEventListener('submit', (e) => {
-        //     // e.preventDefault();
-            
-        //     // Get form data
-        //     const formData = new FormData(contactForm);
-        //     const name = formData.get('name');
-        //     const email = formData.get('email');
-        //     const subject = formData.get('subject');
-        //     const message = formData.get('message');
-            
-        //     // Simple form validation
-        //     if (!name || !email || !subject || !message) {
-        //         alert('Please fill in all fields.');
-        //         return;
-        //     }
-            
-        //     // Email validation
-        //     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        //     if (!emailRegex.test(email)) {
-        //         alert('Please enter a valid email address.');
-        //         return;
-        //     }
-            
-        //     // Show success message (in a real implementation, you'd send this to a server)
-        //     alert('Thank you for your message! I\'ll get back to you soon.');
-        //     contactForm.reset();
-        // });
+            emailjs.sendForm(
+                'service_7y558r8',
+                'template_ofj18fq',
+                this
+            )
+            .then(function() {
+                alert('Message sent successfully!');
+                contactForm.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, function(error) {
+                alert('Failed to send message. Please try again.');
+                console.error(error);
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            });
+        });
 
         // Intersection Observer for animations
         const observerOptions = {
@@ -1784,17 +1774,5 @@ contactForm.addEventListener('submit', function(e) {
             }
         });
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-
-<script>
-  (function(){
-    emailjs.init("AN05EWZpZ-QoarlJp");
-  })();
-</script>
 </body>
 </html>
-
-
-
-
-
