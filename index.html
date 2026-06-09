@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gohar Zafar | Professional Mobile Application Developer </title>
+    <title>Flutter Developer — Full-Stack (Mobile + AWS Backend)</title>
     <meta name="description" content="Professional Flutter developer specializing in cross-platform mobile applications. View my portfolio of live apps including e-commerce, auction platforms, and productivity tools.">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
@@ -753,6 +753,123 @@
             color: var(--text-secondary);
         }
 
+        /* AWS Projects Section */
+        .aws-projects {
+            padding: 5rem 0;
+            background: var(--bg-primary);
+        }
+
+        .aws-card {
+            background: var(--bg-secondary);
+            border-radius: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(249, 115, 22, 0.25);
+        }
+
+        .aws-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(249, 115, 22, 0.2);
+            border-color: #f97316;
+        }
+
+        .aws-card .card-header {
+            background: linear-gradient(135deg, rgba(249,115,22,0.12) 0%, rgba(234,88,12,0.06) 100%);
+            border-bottom: 1px solid rgba(249, 115, 22, 0.2);
+        }
+
+        .aws-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: rgba(249, 115, 22, 0.15);
+            color: #fb923c;
+            border: 1px solid rgba(249, 115, 22, 0.3);
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.25rem 0.65rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .aws-card .app-icon {
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+        }
+
+        .aws-card h3 { color: var(--text-primary); }
+
+        .aws-card .card-category { color: #fb923c; }
+
+        .aws-feature-tag {
+            background: rgba(249, 115, 22, 0.1);
+            color: #fb923c;
+            border: 1px solid rgba(249, 115, 22, 0.25);
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .aws-link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(249, 115, 22, 0.1);
+            color: #fb923c;
+            border: 1px solid rgba(249, 115, 22, 0.35);
+            border-radius: 0.4rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .aws-link-btn:hover {
+            background: rgba(249, 115, 22, 0.2);
+            border-color: #f97316;
+            transform: translateY(-2px);
+        }
+
+        /* UI Design Capability Banner */
+        .ui-capability-banner {
+            margin-top: 3rem;
+            padding: 1.5rem 2rem;
+            background: linear-gradient(135deg, rgba(96,165,250,0.08) 0%, rgba(56,189,248,0.05) 100%);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+        }
+
+        .ui-capability-banner .ui-icon {
+            width: 3rem;
+            height: 3rem;
+            background: var(--gradient-primary);
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .ui-capability-banner h4 {
+            color: var(--text-primary);
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .ui-capability-banner p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
         /* Animations */
         @keyframes fadeInUp {
             from {
@@ -942,7 +1059,8 @@
                 <li><a href="#home" class="nav-link active">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#portfolio" class="nav-link">Mobile Apps</a></li>
+                <li><a href="#aws-projects" class="nav-link">AWS Projects</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="mobile-menu-toggle" id="mobile-menu-toggle">
@@ -957,10 +1075,16 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Flutter Developer</h1>
-                <p class="hero-subtitle">Cross-Platform Mobile App Specialist</p>
+                <h1>Flutter Developer — Full-Stack (Mobile + AWS Backend)</h1>
+                <p class="hero-subtitle">Cross-Platform Mobile Apps · Backend APIs · AWS Deployment</p>
                 <p class="hero-description">
-                    Passionate about creating beautiful, performant mobile applications that work seamlessly across iOS and Android platforms. Specialized in Flutter development with expertise in modern app architecture and user experience design.
+                    What I bring:<br>
+                    • Flutter development for cross-platform iOS and Android apps<br>
+                    • Backend development (APIs, databases, business logic)<br>
+                    • Backend deployment and hosting on AWS<br><br>
+                    A recent example: I built a full system for Jorja Aesthetics, including a backend hosted on AWS with an admin panel:<br>
+                    <a href="https://admin.jorjarevive.com/" target="_blank" rel="noopener noreferrer" style="color: var(--primary-color);">admin.jorjarevive.com</a> · Backend API also hosted on AWS<br>
+                    Admin panel: <a href="https://admin.wearit.ae" target="_blank" rel="noopener noreferrer" style="color: var(--primary-color);">admin.wearit.ae</a>
                 </p>
                 
                 <div class="hero-stats">
@@ -1165,9 +1289,9 @@
     <section id="portfolio" class="portfolio">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">My Portfolio</h2>
+                <h2 class="section-title">Mobile App Portfolio</h2>
                 <p class="section-subtitle">
-                    A collection of live mobile applications built with Flutter, showcasing diverse functionality and industry expertise
+                    Live Flutter apps built for iOS and Android — spanning e-commerce, auctions, logistics, education, and more
                 </p>
             </div>
             
@@ -1550,10 +1674,104 @@
                     </div>
                 </div>
             </div>
+
+            <!-- UI Design Capability Banner -->
+            <div class="ui-capability-banner">
+                <div class="ui-icon">
+                    <i class="fas fa-pen-nib"></i>
+                </div>
+                <div>
+                    <h4>Custom UI Design Included</h4>
+                    <p>I don't just build apps — I design them too. From wireframes to polished interfaces, I can create the full UI from scratch without needing a separate designer.</p>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- AWS Projects Section -->
+    <section id="aws-projects" class="aws-projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">AWS Backend Projects</h2>
+                <p class="section-subtitle">
+                    Full-stack systems with backends deployed and hosted on AWS — APIs, admin panels, databases, and business logic
+                </p>
+            </div>
+
+            <div class="portfolio-grid">
+
+                <!-- Jorja Aesthetics -->
+                <div class="portfolio-card aws-card">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <div class="app-icon">
+                                <i class="fas fa-spa"></i>
+                            </div>
+                            <div>
+                                <h3>Jorja Aesthetics</h3>
+                                <span class="card-category">Aesthetics & Beauty — Full System</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <span class="aws-badge"><i class="fab fa-aws"></i> Hosted on AWS</span>
+                        <p class="card-description">
+                            End-to-end system built for Jorja Aesthetics. Includes a Flutter mobile app, a backend API deployed on AWS, and a fully functional admin panel for managing bookings, clients, and operations.
+                        </p>
+                        <div class="card-features">
+                            <span class="aws-feature-tag">AWS Backend</span>
+                            <span class="aws-feature-tag">REST API</span>
+                            <span class="aws-feature-tag">Admin Panel</span>
+                            <span class="aws-feature-tag">Flutter App</span>
+                            <span class="aws-feature-tag">Booking System</span>
+                        </div>
+                        <div class="card-links">
+                            <a href="https://admin.jorjarevive.com/" class="aws-link-btn" target="_blank" rel="noopener noreferrer">
+                                <i class="fas fa-external-link-alt"></i>
+                                Admin Panel
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wearit -->
+                <div class="portfolio-card aws-card">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <div class="app-icon">
+                                <i class="fas fa-tshirt"></i>
+                            </div>
+                            <div>
+                                <h3>Wearit</h3>
+                                <span class="card-category">Fashion & E-Commerce — Full System</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <span class="aws-badge"><i class="fab fa-aws"></i> Hosted on AWS</span>
+                        <p class="card-description">
+                            Full-stack platform for Wearit with a backend API hosted on AWS and a complete admin panel for managing products, orders, and users. Built to handle real-world e-commerce operations at scale.
+                        </p>
+                        <div class="card-features">
+                            <span class="aws-feature-tag">AWS Backend</span>
+                            <span class="aws-feature-tag">REST API</span>
+                            <span class="aws-feature-tag">Admin Panel</span>
+                            <span class="aws-feature-tag">E-Commerce</span>
+                            <span class="aws-feature-tag">Order Management</span>
+                        </div>
+                        <div class="card-links">
+                            <a href="https://admin.wearit.ae" class="aws-link-btn" target="_blank" rel="noopener noreferrer">
+                                <i class="fas fa-external-link-alt"></i>
+                                Admin Panel
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
@@ -1807,6 +2025,3 @@
     </script>
 </body>
 </html>
-
-
-
